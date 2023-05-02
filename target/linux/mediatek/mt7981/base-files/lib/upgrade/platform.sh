@@ -5,6 +5,7 @@ platform_do_upgrade() {
 
 	case "$board" in
 	*360,t7* |\
+	xiaomi,wr30u* |\
 	*snand*)
 		nand_do_upgrade "$1"
 		;;
@@ -27,6 +28,7 @@ platform_check_image() {
 
 	case "$board" in
 	*360,t7* |\
+	xiaomi,wr30u* |\
 	*snand* |\
 	*emmc*)
 		# tar magic `ustar`

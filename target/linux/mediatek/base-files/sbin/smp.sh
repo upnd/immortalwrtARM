@@ -709,11 +709,12 @@ setup_model()
 	mt_whnat_en=$(module_exist "mt_whnat")
 
 	case $board in
-	*mi* |\
+	xiaomi,redmi-router-ax6000* |\
 	*7986*)
 		MT7986_whnat $num_of_wifi
 		;;
 	*7981* |\
+	xiaomi,wr30u* |\
 	*360,t7*)
 		MT7981_whnat $num_of_wifi
 		;;
