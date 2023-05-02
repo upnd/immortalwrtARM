@@ -17,6 +17,11 @@ xiaomi,wr30u*)
         ucidef_set_led_default "sys_yellow" "YELLOW" "led_yellow" "0"
         ucidef_set_led_netdev "net_blue" "NET_BLUE" "net_blue" "eth1"
 	;;
+komi,a31)
+        ucidef_set_led_default "green" "GREEN" "led_green" "1"
+        ucidef_set_led_default "red" "RED" "led_red" "0"
+        ucidef_set_led_netdev "blue" "BLUE" "led_blue" "eth1"
+        ;;
 esac
 board_config_flush
 

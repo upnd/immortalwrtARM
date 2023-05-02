@@ -22,6 +22,7 @@ mediatek_setup_interfaces()
 	*2500wan-p5*)
 		ucidef_set_interfaces_lan_wan "lan1 lan2 lan3 lan4" wan
 		;;
+	komi,a31 |\
 	*360,t7*)
 		ucidef_set_interfaces_lan_wan "eth0 ra0 ra1 rai0 rai1" "eth1"
 		ucidef_add_switch "switch0" \
@@ -103,6 +104,10 @@ mediatek_setup_macs()
 		wan_mac=$(mtd_get_mac_ascii Bdata ethaddr_wan)
 		lan_mac=$(mtd_get_mac_ascii Bdata ethaddr)
 		;;
+	komi,a31)
+                lan_mac=$(mtd_get_mac_ascii "u-boot-env" ethaddr)
+                wan_mac=$(macaddr_add "$lan_mac" 1)
+                ;;
 	esac
 
 	case "$lan_mac" in
