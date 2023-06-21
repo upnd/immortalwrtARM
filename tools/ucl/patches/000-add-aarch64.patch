@@ -1,0 +1,12 @@
+--- a/acconfig/config.guess
++++ b/acconfig/config.guess
+@@ -830,6 +830,9 @@
+     arm*:Linux:*:*)
+ 	echo ${UNAME_MACHINE}-unknown-linux-gnu
+ 	exit 0 ;;
++    aarch64:Linux:*:*)
++	echo ${UNAME_MACHINE}-unknown-linux-gnu
++	exit 0 ;;
+     cris:Linux:*:*)
+ 	echo cris-axis-linux-gnu
+ 	exit 0 ;;
